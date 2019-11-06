@@ -1,0 +1,85 @@
+<h3 >Please Add Item Rating:</h3> <br>
+<div class="container">
+
+  <form (ngSubmit)="addItemRating()" #addForm="ngForm" >
+      <table class="table table-hover">
+
+        <tr><td>Enter User Id: </td>
+          <td><input type="number" [(ngModel)]="userId" name="userId" class="form-control" #id=ngModel placeholder="Enter User Id" required pattern="[0-9]{1,}">
+          <span *ngIf="id.touched && id.invalid && (id.errors.required || id.errors.pattern)" class="alert-warning">
+            Invalid Id or Id cannot be empty!
+          </span></td> </tr>
+
+      <tr><td>Enter Feedback Type: </td>
+      <td><input type="text" [(ngModel)]="feedbackType" name="feedbackType" class="form-control" #type=ngModel placeholder="Enter Feedback Type" required pattern="[A-Za-z]{2,}">
+      <span *ngIf="type.touched && type.invalid && (type.errors.required || type.errors.pattern)" class="alert-warning">
+        Type cannot be empty!
+      </span></td> </tr>
+    
+      <!-- <tr><td>Enter Item Name: </td>
+        <td><input type="text" [(ngModel)]="itemName" name="itemName" class="form-control" #name=ngModel placeholder="Enter Item Name" required pattern="[A-Za-z]{2,}">
+        <span *ngIf="name.touched && name.invalid && (name.errors.required || name.errors.pattern)" class="alert-warning">
+          Invalid Item Name or Item Name cannot be empty!
+        </span></td> </tr> -->
+      
+      <tr><td>Enter Rating: </td>
+        <td><input type="number" [(ngModel)]="itemRating" name="itemRating" #rating=ngModel placeholder="Enter Cafe Rating" class="form-control" required >
+      <span *ngIf="rating.touched && rating.invalid && rating.errors.required" class="alert-warning">
+          Invalid Item rating or Item rating cannot be empty!
+        </span></td></tr>
+    
+    
+      <tr>
+        <td colspan="2" align="center">
+            <button class="btn btn-success" type="submit" [disabled]="!addForm.valid">Add Item Rating</button>
+        </td>
+      </tr>
+    
+  </table>
+  </form>
+  </div>
+
+
+  <h3 >Please Add Item Review:</h3> <br>
+
+  <div class="container">
+  
+    <form (ngSubmit)="addItemReview()" #addForm1="ngForm" >
+        <table class="table table-hover">
+  
+          <tr><td>Enter User Id: </td>
+            <td><input type="number" [(ngModel)]="userId" name="userId" class="form-control" #id=ngModel placeholder="Enter User Id" required pattern="[0-9]{1,}">
+            <span *ngIf="id.touched && id.invalid && (id.errors.required || id.errors.pattern)" class="alert-warning">
+              Invalid Id or Id cannot be empty!
+            </span></td> </tr>
+  
+  
+  
+        <tr><td>Enter Feedback Type: </td>
+        <td><input type="text" [(ngModel)]="feedbackType" name="feedbackType" class="form-control" #type=ngModel placeholder="Enter Feedback Type" required pattern="[A-Za-z]{2,}">
+        <span *ngIf="type.touched && type.invalid && (type.errors.required || type.errors.pattern)" class="alert-warning">
+          Type cannot be empty!
+        </span></td> </tr>
+      
+        <!-- <tr><td>Enter Item Name: </td>
+          <td><input type="text" [(ngModel)]="itemName" name="itemName" class="form-control" #name=ngModel placeholder="Enter Item Name" required pattern="[A-Za-z]{2,}">
+          <span *ngIf="name.touched && name.invalid && (name.errors.required || name.errors.pattern)" class="alert-warning">
+            Invalid Item Name or Item name cannot be empty!
+          </span></td> </tr> -->
+        
+        <tr><td>Enter Review: </td>
+          <td><input type="text" [(ngModel)]="itemReview" name="itemReview" #review=ngModel placeholder="Enter Item Review" class="form-control" required >
+        <span *ngIf="review.touched && review.invalid && review.errors.required" class="alert-warning">
+            Invalid Item review or Item review cannot be empty!
+          </span></td></tr>
+      
+      
+        <tr>
+          <td colspan="2" align="center">
+              <button class="btn btn-success" type="submit" [disabled]="!addForm1.valid">Add Item Review</button>
+          </td>
+        </tr>
+      
+    </table>
+    </form>
+    </div>

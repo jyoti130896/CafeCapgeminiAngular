@@ -1,0 +1,21 @@
+<h3 style="text-align: center; color: rgb(61, 59, 59);">All Items</h3> <br>
+
+<table class="table table-bordered">
+  <tr>
+    <th>Item Id</th>
+    <th>Item Name</th>
+    <th>Item Type</th>
+    <th>Item Price</th>
+  
+    <th colspan="2">Action</th>
+  </tr>
+  <tr *ngFor="let item of items; let i of index">
+    <td>{{item.itemId}}</td>
+    <td>{{item.itemName}}</td>
+    <td>{{item.itemType}}</td>
+    <td>{{item.itemPrice}}</td>
+   
+    <td><button class="btn btn-warning" (click)="onSelect(item)">Add Rating or Review</button></td>
+    <td><button class="btn btn-warning" (click)="searchItemRating(item.itemName)">Average Rating</button></td>
+<tr><td colspan="6">Average Rating for Item Name <b>{{itemName}}</b> is<b>{{result}}</b></td></tr>
+</table>
