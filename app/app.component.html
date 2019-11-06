@@ -1,0 +1,16 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand">Cafe Service</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a [routerLink]="['add']">View all Cafes</a></li>
+      <li><a [routerLink]="['search']">Search Cafe</a></li>
+      <li><a [routerLink]="['list']">List Cafe</a></li>
+      <li><a [routerLink]="['addfeedback']"></a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+</div>
